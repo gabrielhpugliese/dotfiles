@@ -1,0 +1,26 @@
+[felippe]
+	bueno = Felippe Bueno
+[user]
+	name = Felippe
+	email = felippe.bueno@gmail.com
+[color]
+	ui = auto
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    pl = pull
+    ps = push
+    t = tag
+    b = branch
+    l = log
+    df = diff
+[core]
+	excludesfile = /Users/felippe/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

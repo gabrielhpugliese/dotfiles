@@ -1,0 +1,60 @@
+"from python ide
+" Use :make to see syntax errors. (:cn and :cp to move around, :dist to see
+" all errors)
+set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
+set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+
+" Generate tags with: ctags -R -f ~/.vim/tags/python24.ctags /usr/lib/python2.4/
+" ctrl-[ to go to the tag under the cursor, ctrl-T to go back.
+"set tags+=$HOME/.vim/tags/python24.ctags
+map P :TlistToggle<CR>
+
+
+
+
+" Execute a selection of code (very cool!)
+" Use VISUAL to select a range and then hit ctrl-h to execute it.
+python << EOL
+import vim
+def EvaluateCurrentRange():
+    eval(compile('\n'.join(vim.current.range),'','exec'),globals())
+EOL
+map <C-h> :py EvaluateCurrentRange()<CR>
+
+" Auto completion via ctrl-space (instead of the nasty ctrl-x ctrl-o)
+set omnifunc=pythoncomplete#Complete
+"inoremap <Nul> <C-x><C-o>
+
+"my
+map <C-a> :! /usr/local/google_appengine/appcfg.py update .<CR>
+""map <C-f> :! flake8 .<CR>
+map <F2> :echo strftime('%c')<CR>
+map <silent> <F5> :call BufferList()<CR>
+
+
+   
+nmap <Tab> :b#<CR>
+
+set pastetoggle=<F4>
+set ruler
+set number
+""set guioptions=-lrbT
+set guioptions-=l
+set guioptions-=r
+set guioptions-=b
+set guioptions-=T
+set guioptions-=m
+set cursorline
+set cursorcolumn
+"colorscheme peaksea
+syntax on
+set completeopt=menu
+set gcr=a:blinkon1
+set tabstop=4 
+set softtabstop=0
+set shiftwidth=4
+set expandtab
+set visualbell
+set t_Co=256
+
+call pathogen#infect()

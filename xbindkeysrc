@@ -1,0 +1,134 @@
+# For the benefit of emacs users: -*- shell-script -*-
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 1.7.1
+#
+# If you edit this file, do not forget to uncomment any lines
+# that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# Examples of commands:
+
+#"xbindkeys_show" 
+#  control+shift + q
+
+# set directly keycode (here control + f with my keyboard)
+#"xterm"
+#  c:41 + m:0x4
+
+# specify a mouse button
+#"xterm"
+#  control + b:2
+
+
+#"xterm -geom 50x20+20+20"
+#   Shift+Mod2+alt + s
+#
+## set directly keycode (here control+alt+mod2 + f with my keyboard)
+#"xterm"
+#  alt + c:0x29 + m:4 + mod2
+#
+## Control+Shift+a  release event starts rxvt
+#"rxvt"
+#  release+control+shift + a
+#
+## Control + mouse button 2 release event starts rxvt
+#"rxvt"
+#  Control + b:2 + Release
+
+##################################
+# End of xbindkeys configuration #
+##################################
+
+
+####
+"$HOME/.bin/eterm_collor.pl"
+	control + alt + c
+
+"$HOME/.bin/eterm_collor.pl -F -misc-nexus-medium-r-normal--10-100-75-75-c-60-iso8859-1"
+        alt + c
+
+
+"Eterm"
+        control + alt + e
+
+"Eterm --cursor-color red"
+        control + alt + s
+
+"Eterm -F -misc-nexus-medium-r-normal--10-100-75-75-c-60-iso8859-1"
+        alt + e
+
+
+"xterm -fn -misc-nexus-medium-r-normal--10-100-75-75-c-60-iso8859-1 -bc -foreground grey5 -background white" 
+        alt + t
+
+
+##"xterm -bc -foreground grey5 -background white"
+##        control + alt + t
+##
+"gnome-terminal --hide-menubar"
+	control + alt + t
+
+"MAIL="imaps://@i/" xterm -bc -T mutt -g 115x30 -e mutt"
+	alt + m
+
+"nautilus --no-desktop"
+	control + alt + h
+
+"xscreensaver-command -lock"
+	control + alt + l
+
+
+
+#"amarok -t"
+"rhythmbox-client --play-pause"
+	control + alt + p
+
+#"xmms -u"
+#        control + alt + u    
+
+#"amarok --next"
+"rhythmbox-client --next"
+	control + alt + n
+
+"rhythmbox-client --previous"
+	control + alt + a
+
+"acct.sh entrada"
+	alt + s
+
+ "acct.sh saida"
+	alt + f
+ "acct.sh xlist"
+	alt + x
+

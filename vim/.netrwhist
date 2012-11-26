@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/felippe/tmp/b'
+let g:netrw_dirhist_2='/home/felippe/predicta/siteapps-back.git/gae_app/graphssss'
+let g:netrw_dirhist_3='/home/felippe/Dropbox/WorkPlace/dotfiles.git/vim/bundle/syntastic/syntax_checkers/python'
+let g:netrw_dirhist_4='/home/felippe/predicta/siteapps-back.git/gae_app/graphssss'
+let g:netrw_dirhist_5='/Users/felippe/.vim'
