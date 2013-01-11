@@ -56,8 +56,4 @@ set shiftwidth=4
 set expandtab
 set visualbell
 set t_Co=256
-nmap ,s :ConqueTermVSplit ~/.vim/scripts/stackoverflow_cli_search.py
 call pathogen#infect()
-
-
-
