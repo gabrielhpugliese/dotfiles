@@ -255,8 +255,8 @@ if has("gui_running")
   set guioptions-=T
   set t_Co=256
   "set transparency=5
-  colorscheme jellybeans
-  "colorscheme solarized
+  "colorscheme jellybeans
+  colorscheme solarized
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
   set guioptions-=r  "remove right-hand scroll bar
@@ -273,8 +273,8 @@ if has("gui_running")
   endif
 
 else
-  colorscheme jellybeans
-  "colorscheme solarized
+  "colorscheme jellybeans
+  colorscheme solarized
 endif
 
 set title
