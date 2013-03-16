@@ -37,7 +37,7 @@ nmap <Tab> :b#<CR>
 
 set pastetoggle=<F4>
 set ruler
-set number
+"set number
 ""set guioptions=-lrbT
 set guioptions-=l
 set guioptions-=r
@@ -45,9 +45,9 @@ set guioptions-=b
 set guioptions-=T
 set guioptions-=m
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 "colorscheme peaksea
-syntax on
+syntax off
 set completeopt=menu
 set gcr=a:blinkon1
 set tabstop=4 

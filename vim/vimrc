@@ -111,9 +111,9 @@ autocmd FileType html,htmldjango,htmljinja,eruby,mako,haml,daml let b:closetag_h
 autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako,haml,daml source ~/.vim/scripts/closetag.vim
 
 " C/Obj-C/C++
-autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
-autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
-autocmd FileType objc setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab colorcolumn=79
+autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab ""colorcolumn=79
+autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab ""colorcolumn=79
+autocmd FileType objc setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab ""colorcolumn=79
 let c_no_curly_error=1
 
 " vim
@@ -122,7 +122,7 @@ autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 
 " Javascript
 " ----------
-autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
+autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 ""colorcolumn=79
 autocmd BufNewFile,BufRead *.json setlocal ft=javascript
 let javascript_enable_domhtmlcss=1
 
@@ -255,8 +255,8 @@ if has("gui_running")
   set guioptions-=T
   set t_Co=256
   "set transparency=5
-  "colorscheme jellybeans
-  colorscheme solarized
+  "colorscheme astronaut
+  "colorscheme solarized
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
   set guioptions-=r  "remove right-hand scroll bar
@@ -273,8 +273,8 @@ if has("gui_running")
   endif
 
 else
-  "colorscheme jellybeans
-  colorscheme solarized
+  "colorscheme astronaut
+  "colorscheme solarized
 endif
 
 set title
