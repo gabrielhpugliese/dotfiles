@@ -102,7 +102,7 @@ alias v='vim'
 alias gv='gvim'
 alias g='git'
 alias p='python'
-alias ip='ipython'
+#alias ip='ipython'
 
 alias ls='ls -F'
 #alias cd=pushd
@@ -120,11 +120,12 @@ fi
 export HISTSIZE=8000
 export HISTFILESIZE=8000
 
-export EC2_HOME=~/.ec2
-export AWS_AUTO_SCALING_HOME=~/.autoscaling
-export AWS_CLOUDWATCH_HOME=~/.cloud-watch
-export JAVA_HOME=/usr/lib/jvm/java-6-openjdk/
-export PATH=$PATH:$EC2_HOME/bin:$AWS_AUTO_SCALING_HOME/bin:$AWS_CLOUDWATCH_HOME/bin:/home/felippe/.ami/bin/
+export EC2_HOME=$HOME/.ec2
+export AWS_AUTO_SCALING_HOME=$HOME/.autoscaling
+export AWS_CLOUDWATCH_HOME=$HOME/.cloud-watch
+export JAVA_HOME=/usr/lib/jvm/java-7-oracle/
+export PATH=$PATH:$EC2_HOME/bin:$AWS_AUTO_SCALING_HOME/bin:$AWS_CLOUDWATCH_HOME/bin:$HOME/.ami/bin/
+
 
 set -o vi
 if [ `uname` = 'Darwin' ]; then
@@ -142,6 +143,11 @@ if [ -f ~/.bashrc_secret ]; then
     . ~/.bashrc_secret
 fi
 
+if [ -f ~/.bin/funcoeszz ]; then
+    . ~/.bin/funcoeszz
+fi
+
+
 export COPYFILE_DISABLE=true
 
 
@@ -153,3 +159,5 @@ export COPYFILE_DISABLE=true
 #export LC_NUMERIC="en_US.UTF-8"
 #export LC_TIME="en_US.UTF-8"
 #export LC_ALL=
+
+alias mg="cd WorkPlace/mongu.ru.git/ ; vim"

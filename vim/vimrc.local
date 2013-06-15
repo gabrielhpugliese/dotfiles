@@ -47,7 +47,7 @@ set guioptions-=m
 set cursorline
 "set cursorcolumn
 "colorscheme peaksea
-syntax off
+syntax on
 set completeopt=menu
 set gcr=a:blinkon1
 set tabstop=4 
@@ -57,3 +57,4 @@ set expandtab
 set visualbell
 set t_Co=256
 call pathogen#infect()
+colorscheme molokai
