@@ -160,4 +160,4 @@ export COPYFILE_DISABLE=true
 #export LC_TIME="en_US.UTF-8"
 #export LC_ALL=
 
-alias mg="cd WorkPlace/mongu.ru.git/ ; vim"
+alias mg="cd ~/WorkPlace/mongu.ru.git/ ; vim"
