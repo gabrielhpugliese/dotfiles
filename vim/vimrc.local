@@ -58,3 +58,5 @@ set visualbell
 set t_Co=256
 call pathogen#infect()
 colorscheme molokai
+
+let loaded_matchparen = 0

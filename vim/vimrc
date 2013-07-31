@@ -98,7 +98,7 @@ fun! s:SelectHTML()
   set ft=html
 endfun
 
-autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako,haml,daml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako,haml,daml setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd bufnewfile,bufread *.rhtml setlocal ft=eruby
 autocmd BufNewFile,BufRead *.mako setlocal ft=mako
 autocmd BufNewFile,BufRead *.tmpl setlocal ft=htmljinja
@@ -123,7 +123,7 @@ autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 
 " Javascript
 " ----------
-autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 ""colorcolumn=79
+autocmd FileType javascript setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 ""colorcolumn=79
 autocmd BufNewFile,BufRead *.json setlocal ft=javascript
 let javascript_enable_domhtmlcss=1
 
