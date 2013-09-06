@@ -1,18 +1,28 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-export TERM=xterm-256color
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -72,9 +82,13 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -92,72 +106,30 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+if [ -f ~/.bashrc_secrets ]; then
+    . ~/.bashrc_secrets
+fi
+
+# Linux
 export EDITOR=vim
 export VISUAL=vim
-export GREP_OPTIONS='--color=auto'
+source ~/bash_prompt.sh
 
-alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
-alias gae_update='/usr/local/google_appengine/appcfg.py update .'
-alias v='vim'
-alias gv='gvim'
-alias g='git'
-alias p='python'
-#alias ip='ipython'
+# Python
+alias gae_update='~/google_appengine/appcfg.py update .'
+alias gae_dev='~/google_appengine/dev_appserver.py .'
+export WORKON_HOME=~/.venv
+source /usr/local/bin/virtualenvwrapper.sh
 
-alias ls='ls -F'
-#alias cd=pushd
-#alias bd=popd
-
-if [ -d ~/.bin ]; then
-	PATH="$PATH:~/.bin"
+# Meteor
+if [ -f /usr/lib/node_modules/meteorite/completions/mrt.bash ]; then
+  . /usr/lib/node_modules/meteorite/completions/mrt.bash
 fi
 
-if [ -s ~/.bash_prompt.sh ]; then
-	. ~/.bash_prompt.sh
-fi
+# Ruby
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source ~/.rvm/scripts/rvm
 
-
-export HISTSIZE=8000
-export HISTFILESIZE=8000
-
-export EC2_HOME=$HOME/.ec2
-export AWS_AUTO_SCALING_HOME=$HOME/.autoscaling
-export AWS_CLOUDWATCH_HOME=$HOME/.cloud-watch
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle/
-export PATH=$PATH:$EC2_HOME/bin:$AWS_AUTO_SCALING_HOME/bin:$AWS_CLOUDWATCH_HOME/bin:$HOME/.ami/bin/
-
-
-set -o vi
-if [ `uname` = 'Darwin' ]; then
-        PATH="/usr/local/share/python:$PATH"
-        VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-fi
-VENVWRAPPER_BIN='/usr/local/bin/virtualenvwrapper.sh'
-
-if [[ -s $VENVWRAPPER_BIN ]]; then
-    export WORKON_HOME=~/virtualenv
-    source $VENVWRAPPER_BIN
-fi
-
-if [ -f ~/.bashrc_secret ]; then
-    . ~/.bashrc_secret
-fi
-
-if [ -f ~/.bin/funcoeszz ]; then
-    . ~/.bin/funcoeszz
-fi
-
-
-export COPYFILE_DISABLE=true
-
-
-#export LANG="en_US.UTF-8"
-#export LC_COLLATE="en_US.UTF-8"
-#export LC_CTYPE="en_US.UTF-8"
-#export LC_MESSAGES="en_US.UTF-8"
-#export LC_MONETARY="en_US.UTF-8"
-#export LC_NUMERIC="en_US.UTF-8"
-#export LC_TIME="en_US.UTF-8"
-#export LC_ALL=
-
-alias mg="cd ~/WorkPlace/mongu.ru.git/ ; vim"
+# TMUX
+alias tmux='tmux -2'
+export TERM='xterm-256color'
