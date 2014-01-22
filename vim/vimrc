@@ -1,0 +1,37 @@
+" Pathogen
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+" Visual
+syntax on
+set completeopt=menu
+set gcr=a:blinkon1
+set tabstop=4 
+set softtabstop=0
+set shiftwidth=4
+set expandtab
+set visualbell
+set t_Co=256
+call pathogen#infect()
+colorscheme molokai
+
+" Bindings
+nmap <F5> :%y+<Return>
+nmap <Tab> :b#<CR>
+inoremap <expr> <Tab> pumvisible() ? '<C-n>' : '<C-x><C-o>'
+set pastetoggle=<F4>
+
+" NERDTree configuration
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$']
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
+let NERDTreeShowBookmarks=1
+map <F3> :NERDTreeToggle<CR>
+
+" Javascript
+autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
+
+" ctrlp
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|meteor)$'
+
