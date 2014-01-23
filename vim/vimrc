@@ -35,8 +35,11 @@ function! Tab_Or_Complete()
     return "\<Tab>"
   endif
 endfunction
-
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+map '' ciw'<C-r>"'<Esc>
+map d'' di'hPl2x
+map "" ciw"<C-r>""<Esc>
+map d"" di"hPl2x
 nmap <F5> :%y+<Return>
 nmap <Tab> :b#<CR>
 set pastetoggle=<F4>
