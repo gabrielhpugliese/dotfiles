@@ -1,3 +1,9 @@
+" Settings
+set backupdir=~/.vimfiles/backup/
+set directory=~/.vimfiles/backup/
+set fileencoding=utf-8
+let loaded_matchparen = 1
+
 " Pathogen
 execute pathogen#infect()
 syntax on
@@ -15,11 +21,24 @@ set visualbell
 set t_Co=256
 call pathogen#infect()
 colorscheme molokai
+highlight ColorColumn ctermbg=darkgrey
+
+" Powerline
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+set laststatus=2
 
 " Bindings
+function! Tab_Or_Complete()
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-N>"
+  else
+    return "\<Tab>"
+  endif
+endfunction
+
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 nmap <F5> :%y+<Return>
 nmap <Tab> :b#<CR>
-inoremap <expr> <Tab> pumvisible() ? '<C-n>' : '<C-x><C-o>'
 set pastetoggle=<F4>
 
 " NERDTree configuration
@@ -30,7 +49,7 @@ let NERDTreeShowBookmarks=1
 map <F3> :NERDTreeToggle<CR>
 
 " Javascript
-autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
+autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=80
 
 " ctrlp
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|meteor)$'
