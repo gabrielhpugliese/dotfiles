@@ -55,9 +55,6 @@ map <F3> :NERDTreeToggle<CR>
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=80
 autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
-" Emmet
-autocmd FileType html,htmldjango,css,scss,sass imap <tab> <plug>(EmmetExpandAbbr)
-
 " ctrlp
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|meteor)$'
 
