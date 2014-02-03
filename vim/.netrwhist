@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/gpugliese/workspace/engarteio'
+let g:netrw_dirhist_2='/home/gpugliese/.vim'
+let g:netrw_dirhist_3='/home/gpugliese/workspace'
+let g:netrw_dirhist_4='/home/gpugliese/workspace/devfest-meteor-presentation'

@@ -37,9 +37,9 @@ function! Tab_Or_Complete()
 endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 map '' ciw'<C-r>"'<Esc>
-map d'' di'hPl2x
+" map d'' di'hPl2x
 map "" ciw"<C-r>""<Esc>
-map d"" di"hPl2x
+" map d"" di"hPl2x
 nmap <F5> :%y+<Return>
 nmap <Tab> :b#<CR>
 set pastetoggle=<F4>
@@ -53,6 +53,10 @@ map <F3> :NERDTreeToggle<CR>
 
 " Javascript
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=80
+autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
+" Emmet
+autocmd FileType html,htmldjango,css,scss,sass imap <tab> <plug>(EmmetExpandAbbr)
 
 " ctrlp
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|meteor)$'
