@@ -58,7 +58,7 @@ map <F3> :NERDTreeToggle<CR>
 
 " Javascript
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=80
-autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,css,scss,less,sass setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " ctrlp
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|meteor)$'
