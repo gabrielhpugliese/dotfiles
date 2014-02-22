@@ -9,10 +9,26 @@ set ignorecase
 set smartcase
 let loaded_matchparen = 1
 
-" Pathogen
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
+" Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle "gmarik/vundle"
+
+Bundle "mattn/emmet-vim"
+Bundle "marijnh/tern_for_vim"
+Bundle "tomtom/tlib_vim"
+Bundle "nono/vim-handlebars"
+Bundle "othree/html5.vim"
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "pangloss/vim-javascript"
+Bundle "groenewege/vim-less"
+Bundle "sickill/vim-pasta"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
+
+filetype plugin indent on 
 
 " Visual
 syntax on
@@ -68,3 +84,9 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
         \| exe "normal g'\"" | endif
 endif
+
+" Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html EmmetInstall
+autocmd FileType html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+

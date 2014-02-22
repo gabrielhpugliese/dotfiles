@@ -1,14 +1,3 @@
-function! Tab_Or_Complete()
-  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    return emmet#expandAbbrIntelligent("\<tab>")
-  else
-    return "\<Tab>"
-  endif
-endfunction
-
-" Emmet
-imap <expr> <tab> Tab_Or_Complete()
-
 " Vim plugin for showing matching html tags.
 " Maintainer:  Greg Sexton <gregsexton@gmail.com>
 " Credits: Bram Moolenar and the 'matchparen' plugin from which this draws heavily.
