@@ -27,6 +27,9 @@ Bundle "groenewege/vim-less"
 Bundle "sickill/vim-pasta"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
+Bundle "wavded/vim-stylus"
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'scrooloose/nerdtree'
 
 filetype plugin indent on 
 
@@ -73,8 +76,9 @@ let NERDTreeShowBookmarks=1
 map <F3> :NERDTreeToggle<CR>
 
 " Javascript
-autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=80
-autocmd FileType html,css,scss,less,sass setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript,coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=80
+autocmd FileType html,htmldjango,css,scss,less,sass,stylus setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=80
 
 " ctrlp
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|meteor)$'
@@ -87,6 +91,8 @@ endif
 
 " Emmet
 let g:user_emmet_install_global = 0
-autocmd FileType html EmmetInstall
-autocmd FileType html imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+autocmd FileType html,htmldjango,css,scss,sass,styl EmmetInstall
+"autocmd FileType html,htmldjango,css,scss,sass,styl imap ll <plug>(EmmetExpandAbbr)
+"autocmd FileType html,htmldjango imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
+ino <c-j> <c-r>=snipMate#TriggerSnippet()<cr>
