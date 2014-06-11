@@ -65,6 +65,7 @@ map '' ciw'<C-r>"'<Esc>
 map "" ciw"<C-r>""<Esc>
 " map d"" di"hPl2x
 nmap <F5> :%y+<Return>
+nmap <F6> :r !xsel --clipboard --output<Return>
 nmap <Tab> :b#<CR>
 set pastetoggle=<F4>
 
