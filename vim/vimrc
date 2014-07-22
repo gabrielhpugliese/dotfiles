@@ -30,6 +30,7 @@ Bundle "honza/vim-snippets"
 Bundle "wavded/vim-stylus"
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/nerdtree'
+Bundle 'nvie/vim-flake8'
 
 filetype plugin indent on 
 
@@ -82,7 +83,9 @@ autocmd FileType html,htmldjango,css,scss,less,sass,stylus setlocal expandtab sh
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=80
 
 " ctrlp
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|meteor)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|meteor)$|node_modules'
+let g:ctrlp_max_height=25
+let g:ctrlp_clear_cache_on_exit=0
 
 " Remember last location in file
 if has("autocmd")
