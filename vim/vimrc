@@ -77,10 +77,10 @@ let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
 map <F3> :NERDTreeToggle<CR>
 
-" Javascript
 autocmd FileType javascript,coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=80
 autocmd FileType html,htmldjango,css,scss,less,sass,stylus setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=80
+autocmd BufRead,BufNewFile *.md,markdown,*.mkd setlocal syntax=markdown
 
 " ctrlp
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|meteor)$|node_modules'
