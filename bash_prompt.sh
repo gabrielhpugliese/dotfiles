@@ -74,7 +74,7 @@ function set_git_branch {
   fi
 
   # Set the final branch string.
-  BRANCH="${state}(${branch})${remote}${COLOR_NONE}"
+  BRANCH="${state}($(git rev-parse --abbrev-ref HEAD)${remote})${COLOR_NONE} "
 }
 
 # Return the prompt symbol to use, colorized based on the return value of the
