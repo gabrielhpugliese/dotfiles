@@ -17,7 +17,6 @@ call vundle#rc()
 Bundle "gmarik/vundle"
 
 Bundle "mattn/emmet-vim"
-Bundle "marijnh/tern_for_vim"
 Bundle "tomtom/tlib_vim"
 Bundle "nono/vim-handlebars"
 Bundle "othree/html5.vim"
@@ -31,6 +30,10 @@ Bundle "wavded/vim-stylus"
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nvie/vim-flake8'
+Bundle 'mileszs/ack.vim'
+Bundle "Valloric/YouCompleteMe"
+Bundle "marijnh/tern_for_vim"
+Bundle 'hallettj/jslint.vim'
 
 filetype plugin indent on 
 
@@ -75,6 +78,7 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
+let g:NERDTreeDirArrows=1
 map <F3> :NERDTreeToggle<CR>
 
 autocmd FileType javascript,coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=80
