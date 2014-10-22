@@ -7,6 +7,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set autoread
 let loaded_matchparen = 1
 
 " Vundle
@@ -30,18 +31,20 @@ Bundle "wavded/vim-stylus"
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nvie/vim-flake8'
+Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'mileszs/ack.vim'
+Bundle 'Glench/Vim-Jinja2-Syntax'
 Bundle "Valloric/YouCompleteMe"
 Bundle "marijnh/tern_for_vim"
 Bundle 'hallettj/jslint.vim'
 
-filetype plugin indent on 
+filetype plugin indent on
 
 " Visual
 syntax on
 set completeopt=menu
 set gcr=a:blinkon1
-set tabstop=4 
+set tabstop=4
 set softtabstop=0
 set shiftwidth=4
 set expandtab
@@ -70,6 +73,7 @@ map "" ciw"<C-r>""<Esc>
 " map d"" di"hPl2x
 nmap <F5> :%y+<Return>
 nmap <F6> :r !xsel --clipboard --output<Return>
+nmap <F9> :exec "!git blame ".(expand('%:p'))." -L".(line("."))<cr>
 nmap <Tab> :b#<CR>
 set pastetoggle=<F4>
 
@@ -81,8 +85,9 @@ let NERDTreeShowBookmarks=1
 let g:NERDTreeDirArrows=1
 map <F3> :NERDTreeToggle<CR>
 
+" Identation and Spaces
 autocmd FileType javascript,coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=80
-autocmd FileType html,htmldjango,css,scss,less,sass,stylus setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,htmldjango,css,scss,less,sass,stylus setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=80
 autocmd BufRead,BufNewFile *.md,markdown,*.mkd setlocal syntax=markdown
 
@@ -104,3 +109,6 @@ autocmd FileType html,htmldjango,css,scss,sass,styl EmmetInstall
 "autocmd FileType html,htmldjango imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 ino <c-j> <c-r>=snipMate#TriggerSnippet()<cr>
+
+" Better Whitespace
+autocmd FileType css,sass,less,scss,coffee,python,html,javascript,htmldjango,markdown autocmd BufWritePre <buffer> StripWhitespace
