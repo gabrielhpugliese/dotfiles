@@ -59,3 +59,19 @@ snippet test
 	Tinytest.add('${1}', function (test) {
 		${2}
 	});
+snippet desc
+	describeComponent('components/${1}', function () {
+	  'use strict';
+
+	  beforeEach(function () {
+		this.setupComponent();
+	  });
+
+	  it('${2}', function () {
+		expect('1234567').toBe('1234567');
+	  });
+	});
+snippet it
+	it('${1}', function () {
+		expect(${2}).toBeTruthy();
+	});
