@@ -15,7 +15,7 @@ cp -r tmuxinator/ ~/.tmuxinator
 cat bashrc >> ~/.bashrc
 source ~/.bashrc
 
-sudo gem install tmuxinator
+gem install tmuxinator
 sudo pip install virtualenvwrapper
 
 bash powerline.sh
