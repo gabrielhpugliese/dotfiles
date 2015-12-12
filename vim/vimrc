@@ -38,6 +38,7 @@ Bundle "Valloric/YouCompleteMe"
 Bundle "marijnh/tern_for_vim"
 Bundle "scrooloose/syntastic"
 Bundle "mxw/vim-jsx"
+Bundle "othree/yajs.vim"
 
 filetype plugin indent on
 
