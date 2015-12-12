@@ -1,6 +1,7 @@
 " Settings
 set backupdir=~/.vimfiles/backup/
 set directory=~/.vimfiles/backup/
+set backupcopy=yes
 set fileencoding=utf-8
 set hidden
 set hlsearch
