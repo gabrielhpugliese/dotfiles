@@ -19,16 +19,16 @@ Bundle "gmarik/vundle"
 
 Bundle "mattn/emmet-vim"
 Bundle "tomtom/tlib_vim"
-Bundle "nono/vim-handlebars"
+" Bundle "nono/vim-handlebars"
 Bundle "othree/html5.vim"
 Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "pangloss/vim-javascript"
+" Bundle "pangloss/vim-javascript"
 Bundle "groenewege/vim-less"
 Bundle "sickill/vim-pasta"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 Bundle "wavded/vim-stylus"
-Bundle 'kchmck/vim-coffee-script'
+" Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nvie/vim-flake8'
 Bundle 'ntpeters/vim-better-whitespace'
@@ -96,7 +96,7 @@ autocmd FileType html,htmldjango,css,scss,less,sass,stylus setlocal expandtab sh
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=80
 
 " Filetypes
-autocmd BufRead,BufNewFile *.jsx set filetype=javascript
+autocmd BufRead,BufNewFile *.jsx,*.ejs set filetype=javascript
 autocmd BufRead,BufNewFile *.md,markdown,*.mkd setlocal syntax=markdown
 autocmd BufRead,BufNewFile *.json set filetype=json
 
@@ -139,3 +139,6 @@ nmap <F8> :SyntasticCheck<CR>
 " YCM
 let g:ycm_python_binary_path = '/usr/bin/python2.7'
 let g:ycm_path_to_python_interpreter = '/usr/bin/python2.7'
+
+" JSX
+let g:jsx_ext_required = 0
