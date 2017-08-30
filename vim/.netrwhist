@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/gabriel/Workspace/ml-site/src/main/python/magazineluiza'
-let g:netrw_dirhist_2='/home/gabriel'
-let g:netrw_dirhist_3='/home/gabriel/Workspace/ml-site/src/main/python/magazineluiza'

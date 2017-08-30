@@ -19,4 +19,3 @@ gem install tmuxinator
 sudo pip install virtualenvwrapper
 
 bash powerline.sh
-bash vim.sh
