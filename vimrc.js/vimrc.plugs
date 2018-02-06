@@ -53,10 +53,17 @@ Plug 'csscomb/vim-csscomb'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'ap/vim-css-color'
-Plug 'ElmCast/elm-vim'
-Plug 'jwalton512/vim-blade'
+Plug 'ElmCast/elm-vim', { 'for': 'elm' }
+" Plug 'jwalton512/vim-blade'
+Plug 'VuogNguyen/vim-blade', { 'for': 'blade' }
 Plug 'benjie/neomake-local-eslint.vim'
 Plug 'dbakker/vim-projectroot'
-Plug 'sbdchd/neoformat'
+Plug 'sbdchd/neoformat', { 'for': ['javascript', 'javascript.jsx', 'python', 'php', 'css', 'scss', 'less'] }
 Plug 'scrooloose/nerdcommenter'
 Plug 'christoomey/vim-tmux-navigator'
+" Plug 'editorconfig/editorconfig-vim'
+Plug 'devjoe/vim-codequery'
+Plug 'Shougo/unite.vim'
+Plug 'ivalkeen/nerdtree-execute'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'othree/html5.vim', { 'for': ['html', 'blade'] }

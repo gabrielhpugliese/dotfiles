@@ -20,6 +20,7 @@ endfunction
 
 let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
 let g:eslint_path = StrTrim(system('PATH=$(npm bin):$PATH && which eslint'))
+let g:stylelint_path = StrTrim(system('PATH=$(npm bin):$PATH && which stylelint'))
 
 " === Plugin settings ===
 
@@ -42,20 +43,21 @@ if has('nvim')
   \ 'text': 'E',
   \ 'texthl': 'ErrorMsg',
   \ }
-  let g:neomake_javascript_enabled_makers = ['eslint']
-  let g:neomake_jsx_enabled_makers = ['eslint']
+  let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
+  let g:neomake_jsx_enabled_makers = ['eslint', 'flow']
+  let g:neomake_scss_enabled_makers = ['stylelint']
+  let g:neomake_css_enabled_makers = ['stylelint']
+  let g:neomake_less_enabled_makers = ['stylelint']
 
   let g:neomake_javascript_flow_exe = g:flow_path
   let g:neomake_jsx_flow_exe = g:flow_path
+  let g:neomake_stylelint_exe = g:stylelint_path
 
   autocmd! BufWritePost * Neomake
 
   " neoformat
-  let g:neoformat_javascript_prettier = {
-              \ 'exe': 'prettier',
-              \ 'args': ['--tab-width 4', '--trailing-comma all', '--single-quote', '--parser flow', '--print-width 100'],
-              \ }
-  let g:neoformat_enabled_javascript = ['prettier']
+  let g:neoformat_enabled_javascript = ['prettiereslint']
+  let g:neoformat_enabled_jsx = ['prettiereslint']
   let g:neoformat_basic_format_align = 1
   let g:neoformat_basic_format_trim = 1
   let g:neoformat_run_all_formatters = 1
@@ -128,15 +130,23 @@ nmap <F7> :Neoformat<Return>
 nmap <F8> <leader>cc
 nmap <F9> :exec "!git blame ".(expand('%:p'))." -L".(line("."))." \| head -n20"<cr>
 nmap <Tab> :b#<CR>
+nmap <C-n> :lnext<Return>
+inoremap <F10> <C-O>za
+nnoremap <F10> za
+onoremap <F10> <C-C>za
+vnoremap <F10> zf
 
 " Identation and Spaces
 autocmd FileType html,htmldjango,css,scss,less,sass,stylus,json,javascript,coffee setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=140
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 colorcolumn=80
+autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
 
 " Filetypes
-autocmd BufRead,BufNewFile *.jsx,*.ejs set filetype=javascript.jsx
+autocmd BufRead,BufNewFile *.jsx,*.ejs,*.flow set filetype=javascript.jsx
 autocmd BufRead,BufNewFile *.md,markdown,*.mkd setlocal syntax=markdown
 autocmd BufRead,BufNewFile *.json set filetype=json
+autocmd BufNewFile,BufRead *.blade.php set ft=html
+autocmd! BufWritePost *.js,*.jsx Neoformat
 
 " Autoreload file
 set autoread
@@ -192,10 +202,11 @@ let vim_markdown_preview_hotkey='<C-m>'
 " Elm
 let g:elm_format_autosave=1
 
-" vim-tmux-navigator
-let g:tmux_navigator_no_mappings = 1
+" CScope
+nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+nnoremap <leader>l :call ToggleLocationList()<CR>
 
-nnoremap <silent> <C-Left> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-Down> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-Up> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-Right> :TmuxNavigateRight<cr>
+" autocmd FileType javascript autocmd QuickFixCmdPost [^l]* nested cwindow
+" autocmd FileType javascript autocmd QuickFixCmdPost    l* nested lwindow
+
+let g:neomake_logfile = '/tmp/neomake.log'
