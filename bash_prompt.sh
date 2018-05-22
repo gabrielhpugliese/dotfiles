@@ -43,7 +43,7 @@ function set_git_branch {
   git_status="$(git status 2> /dev/null)"
 
   # Set color based on clean/staged/dirty.
-  if [[ ${git_status} =~ "working directory clean" ]]; then
+  if [[ ${git_status} =~ "working tree clean" ]]; then
     state="${GREEN}"
   elif [[ ${git_status} =~ "Changes to be committed" ]]; then
     state="${YELLOW}"
@@ -74,7 +74,7 @@ function set_git_branch {
   fi
 
   # Set the final branch string.
-  BRANCH="${state}($(git rev-parse --abbrev-ref HEAD)${remote})${COLOR_NONE} "
+  BRANCH="${state}($(git rev-parse --abbrev-ref HEAD)${remote})${COLOR_NONE}"
 }
 
 # Return the prompt symbol to use, colorized based on the return value of the
@@ -113,7 +113,7 @@ function set_bash_prompt () {
   fi
 
   # Set the bash prompt variable.
-  PS1="${PYTHON_VIRTUALENV}${GREEN}\u@\h ${YELLOW}\w${COLOR_NONE}${BRANCH}${PROMPT_SYMBOL}"
+  PS1="${PYTHON_VIRTUALENV}${GREEN}\u@\h${YELLOW}\w${COLOR_NONE}${BRANCH}${PROMPT_SYMBOL} "
 }
 
 # Tell bash to execute this function just before displaying its prompt.
