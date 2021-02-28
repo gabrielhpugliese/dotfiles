@@ -5,7 +5,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'itchyny/lightline.vim'
 
@@ -38,12 +38,12 @@ Plug 'tomtom/tlib_vim'
 Plug 'mattn/emmet-vim'
 Plug 'groenewege/vim-less'
 " Plug 'sickill/vim-pasta'
-Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
+" Plug 'garbas/vim-snipmate'
+" Plug 'honza/vim-snippets'
 " Plug 'wavded/vim-stylus'
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'mxw/vim-jsx'
-Plug 'google/vim-searchindex'
+" Plug 'google/vim-searchindex'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tomasr/molokai'
@@ -67,3 +67,12 @@ Plug 'Shougo/unite.vim'
 Plug 'ivalkeen/nerdtree-execute'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'othree/html5.vim', { 'for': ['html', 'blade'] }
+Plug 'embear/vim-localvimrc'
+Plug 'https://github.com/prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plug 'jparise/vim-graphql'        " GraphQL syntax
+"Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': ':!install.sh \| UpdateRemotePlugins'}
+Plug 'Shougo/denite.nvim'
+Plug 'peitalin/vim-jsx-typescript'
