@@ -126,6 +126,7 @@ set laststatus=2
 " Bindings
 map <F2> :ProjectRootExe Ack
 map <F3> :ProjectRootExe NERDTreeToggle<CR>
+imap <C-c> <Esc>
 set pastetoggle=<F4>
 nmap <F5> :%w !pbcopy<Return>
 nmap <F6> :r !pbpaste<Return>
@@ -239,6 +240,6 @@ set updatetime=300
 set shortmess+=c
 set re=0
 let g:deoplete#enable_debug = 1
-call deoplete#enable_logging('DEBUG', '/tmp/deoplete.log')
-let $NVIM_NODE_LOG_FILE='/tmp/nvim-node.log'
-let $NVIM_NODE_LOG_LEVEL='warn'
+" call deoplete#enable_logging('DEBUG', '/tmp/deoplete.log')
+" let $NVIM_NODE_LOG_FILE='/tmp/nvim-node.log'
+" let $NVIM_NODE_LOG_LEVEL='warn'

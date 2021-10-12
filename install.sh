@@ -12,8 +12,8 @@ cp gitconfig ~/.gitconfig
 cp gitignore_global ~/.gitignore_global
 cp tmux.conf ~/.tmux.conf
 cp -r tmuxinator/ ~/.tmuxinator
-cat bashrc >> ~/.bashrc
-source ~/.bashrc
+cp bash_profile ~/.bash_profile
+source ~/.bash_profile
 
 gem install tmuxinator
 sudo pip install virtualenvwrapper
